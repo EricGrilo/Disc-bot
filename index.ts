@@ -36,6 +36,7 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
     let oldUserChannel = oldState.channelId;
     // check for bot
     if (oldState.member?.user?.bot) return;
+    if (newUserChannel === oldUserChannel) return
     const player = createAudioPlayer();
 
     if (client.channels.cache.find(ch => ch.id === newUserChannel)) //don't remove ""
