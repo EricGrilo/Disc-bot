@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon index.ts",
+    "start": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -18,6 +18,8 @@
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.4.1",
     "libsodium-wrappers": "^0.7.10",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
     "wokcommands": "^1.5.3",
     "youtube-dl-exec": "^2.0.9",
     "ytdl-core": "^4.11.0"
