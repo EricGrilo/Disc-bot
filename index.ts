@@ -1,7 +1,7 @@
 require('dotenv').config({ path: __dirname + '/.env' })
 import WOKCommands from 'wokcommands'
 import path from 'path';
-import client from './client'
+import client from './services/connection/client'
 const ytdl = require('ytdl-core');
 import { createConnection, getConnection } from "./services/connection/connection"
 import { AudioPlayer, AudioPlayerStatus, AudioResource, createAudioPlayer, createAudioResource, VoiceConnection } from '@discordjs/voice';
@@ -25,7 +25,7 @@ client.on('ready', () => {
 
     new WOKCommands(client, {
         commandDir: path.join(__dirname, 'commands'),
-        typeScript: true,
+        // typeScript: true,
         testServers: ['523573629456351233']
     })
 
