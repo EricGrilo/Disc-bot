@@ -1,4 +1,5 @@
-const sounds: string[] = ['https://www.youtube.com/watch?v=3s22jQCwJUA', 'https://youtu.be/-OHNR8BcIQY', 'https://www.youtube.com/watch?v=vS8e5dg-UaM']
+const sounds: string[] = ['https://www.youtube.com/watch?v=3s22jQCwJUA', 'https://youtu.be/-OHNR8BcIQY', 'https://www.youtube.com/watch?v=vS8e5dg-UaM', 'https://www.youtube.com/watch?v=o_4SrI9iX3U&list=PLPhvEBOOIaZnmmiL7l_UZ8PBrskrcybcZ&index=1', 'https://www.youtube.com/watch?v=x2_OfLP8vVg', 'https://www.youtube.com/watch?v=ADWsNPMon1c', 'https://www.youtube.com/watch?v=P5MphlfhOOA', 'https://www.youtube.com/watch?v=gQm8hyMfz2o', 'https://www.youtube.com/watch?v=oaCvLk35BEs', 'https://www.youtube.com/watch?v=Zh1pd2GsRvc', 'https://www.youtube.com/watch?v=-IKImLi-8BY']
+let rogersProbability = 0.07
 
 function validateYouTubeUrl(url: string) {
     if (url != undefined || url != '') {
@@ -17,7 +18,7 @@ function validateYouTubeUrl(url: string) {
 const getRandomSound: any = () => {
     let sound = sounds[Math.floor(Math.random() * sounds.length)];
     if (sound === 'https://www.youtube.com/watch?v=3s22jQCwJUA') {
-        if (Math.random() >= 0.93) {
+        if (Math.random() >= (1 - rogersProbability)) {
             return sound
         } else {
             return getRandomSound()
@@ -56,6 +57,10 @@ export default {
     },
     getSounds: () => {
         return sounds.toString() + '   ' + sounds.length + ' sons'
+    },
+    setRogersProbability: (prob: number) => {
+        rogersProbability = prob;
+        return 'Rogers will play if random is >= ' + (1 - prob).toString()
     },
     getRandomSound: getRandomSound
 
