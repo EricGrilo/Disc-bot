@@ -37,6 +37,14 @@ export default {
             return true
         }
     },
+    removeSound: (url: string) => {
+        console.log('removing', url);
+
+        var index = sounds.indexOf(url);
+        if (index !== -1) {
+            sounds.splice(index, 1);
+        }
+    },
     addMultipleSounds: (link: string) => {
         let linkArray = link.split(',');
         let errorUrl: string[] = []
@@ -57,6 +65,9 @@ export default {
     },
     getSounds: () => {
         return sounds.toString() + '   ' + sounds.length + ' sons'
+    },
+    getSoundsAsArr: () => {
+        return sounds
     },
     setRogersProbability: (prob: number) => {
         rogersProbability = prob;
