@@ -50,7 +50,7 @@ export const onReady = (client: Client<boolean>) => {
 
     new WOKCommands(client, {
         commandDir: path.join(__dirname, '../../commands'),
-        typeScript: true,
+        //typeScript: true,
         testServers: ['523573629456351233']
     })
 }
